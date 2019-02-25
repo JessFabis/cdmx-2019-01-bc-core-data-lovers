@@ -1,4 +1,38 @@
-const dataPokes = window.POKEMON.pokemon;
+//const dataPokes = window.POKEMON.pokemon;
+let dataPokes = "";
+let google = window.google;
+
+fetch ('./data/pokemon/pokemon.json')
+.then (tryPoke => tryPoke.json())
+.then (pokes =>{ 
+  dataPokes = pokes.pokemon ;
+  
+  
+})
+google.load('visualization','1.0',{'packages':['corechart']});
+const draw = ()=>{
+const data = new google.visualization.DataTable();
+data.addColumn('string','Edad');
+data.addColumn('number','Porcentaje %');
+data.addRows(
+  [
+    ['13 a 17 años',22],
+    ['18 a 29 años',46],
+    ['30 a 50 años',25],
+    ['Más de 50 años ',6]
+  ]
+);
+
+const option ={'title':'¿Quien Juega mas ?',
+
+'width':900,
+'height':400};
+const grafica  = new google.visualization.PieChart(document.getElementById('charts'));
+grafica.draw(data,option);
+}
+google.setOnLoadCallback(draw);
+
+
 
 //En esta seccion estoy trayendo los elemneetos del html para que los botones de hagan su funcion/
 
@@ -49,8 +83,8 @@ const getOrderPokemon = (arrayButtonRadio) => {
     radio.addEventListener("click", () => {
 
       if (radio.checked === true) {
-        let idRadio = radio.id.split('-');
-        const cachando = window.data.sortData(result, idRadio[1], idRadio[0]);
+        let idRadio = radio.id;
+        const cachando = window.data.sortData(result, idRadio);
         paintOrder.innerHTML = "";
         imprimir(cachando);
       }
@@ -72,7 +106,7 @@ getOrderPokemon(arrayButtonRadio);
 //calculo
 
 const info = document.getElementById('info');
-
+let statsPok = [];
 const arreglo = [];
 
 info.addEventListener("click", () => {
@@ -80,9 +114,10 @@ info.addEventListener("click", () => {
 
 
     arreglo.push(element.avg_spawns);
-    const statsPok = window.data.computeStats(arreglo);
-    alert("Sabías que... en promedio este tipo de pokemons tienden a aparecer cada : " + statsPok);
-    statsPok.innerHTML + -"";
+     statsPok = window.data.computeStats(arreglo);
+   
+   
 
-  });
+  }); alert("Sabías que... en promedio este tipo de pokemons tienden a aparecer cada : " + statsPok);
 })
+

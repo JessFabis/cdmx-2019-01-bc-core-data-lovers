@@ -3,22 +3,21 @@ window.data = {
 
   //funcion de filtrar
 
-  filterData: (dataPokemon, types) => {
-    const arrayPokemon = dataPokemon;
-
-    const arrayFilter = arrayPokemon.filter(arrayPokemon => arrayPokemon.type.includes(types));
+  filterData: (dataPokes, types) => {
+    const arrayFilter = dataPokes.filter(arrayPokemon => arrayPokemon.type.includes(types));
 
     return arrayFilter;
 
   },
-  sortData: (result, sortBy, sortOrder) => {
+  sortData: (result,  sortOrder) => {
 
-    if (sortOrder == 'asc') {
-      return result.sort((a, b) => (a[sortBy] > b[sortBy]) ? 1 : -1);
-    } else if (sortOrder == 'desc') {
-      return result.sort((a, b) => (a[sortBy] < b[sortBy]) ? 1 : -1);
-    } else {
-      return result;
+    switch (sortOrder) {
+      case 'desc':
+      return result.sort((a, b) => (a.name > b.name)  && -1);
+      case 'asc':
+      return result.sort((a, b) => (a.name < b.name) && -1);
+
+    
     }
 
   },
@@ -28,6 +27,11 @@ window.data = {
     });
     const calculation = (result / arreglo.length).toFixed(2);
     return calculation;
-
+    
+    
   }
+ 
 };
+
+
+

@@ -179,12 +179,12 @@ describe("data", () => {
     });
 
     it('retuns sortData ascendente', () => {
-      expect(window.data.sortData(dataBpokemon, name, "asc")[0].name).toEqual("Bulbasaur");
+      expect(window.data.sortData(dataBpokemon,  "asc")[0].name).toEqual("Bulbasaur");
     });
 
     it('retuns sortData descendente', () => {
-      expect(window.data.sortData(dataBpokemon, name, "desc")[2].name).toEqual("Venusaur");
-      expect(window.data.sortData(dataBpokemon, name)[0].name).toEqual("Bulbasaur");
+      expect(window.data.sortData(dataBpokemon,  "desc")[2].name).toEqual("Venusaur");
+      
     });
     it('computeStats is a function', () => {
       expect(typeof window.data.computeStats).toBe('function');

@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Happy+Monkey" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="./grafo.js"></script>
   <title>Pókemon</title>
 </head>
 
@@ -33,7 +36,9 @@
   <nav>
     PokeGram
   </nav>
-  <a>Elementos</a>
+ 
+
+  <a><br>Elementos</a>
   <div>
     <button type="submit" href="#pok"> <span class="tooltip" data-info="AGUA"><img src="./assets/agua.png" id="Water"
           class="typesPokemon"></span></button>
@@ -53,19 +58,21 @@
     <button type="submit"><span class="tooltip" data-info="TIERRA"><img src="assets/ground.png" id="Ground" class="typesPokemon"></span></button>
     <button type="submit"><span class="tooltip" data-info="VENENO"><img src="assets/poison.png" id="Poison" class="typesPokemon"></span></button>
   </div>
+  
 
   <section id="order-pokes">
     <section>
-      <br>Ordena Alfabéticamente
-      <input id="asc-name" type="radio" name="order">
-      <label for="asc-name">A-Z</label>
-      <input id="desc-name" type="radio" name="order">
-      <label for="desc-name">Z-A</label>
+      <br>Ordena Alfabéticamente <br>
+      <input id="asc" type="radio" name="order">
+      <label for="asc">A-Z</label>
+      <input id="desc" type="radio" name="order">
+      <label for="desc">Z-A</label>
     </section>
 
     <section>
       <input type="button" id="info" value="Dato Curioso">
     </section>
+   
 
 
     <seccion id="paint" class="grid-img">
@@ -80,5 +87,8 @@
     </div>
 
 
+  </section>
+  <br><br><section>
+    <div id="charts" ></div>
   </section>
 </body>

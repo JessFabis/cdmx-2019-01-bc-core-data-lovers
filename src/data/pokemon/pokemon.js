@@ -1,4 +1,4 @@
-window.POKEMON = {
+/*window.POKEMON = {
   "pokemon": [{
     "id": 1,
     "num": "001",
@@ -4084,4 +4084,4 @@ window.POKEMON = {
     ]
   }]
 }
-;
+;*/
