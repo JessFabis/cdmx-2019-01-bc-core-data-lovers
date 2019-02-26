@@ -615,6 +615,6 @@ compañera:
 
 ## Checklist (Opcional)
 
-- [ ] Consume data de forma dinámica (`fetch()`).
-- [ ] Utiliza Librerías de graficas (`chart.js` ó `google chart`).
-- [ ] Cobertura de coverage al 100%.
+- [x] Consume data de forma dinámica (`fetch()`).
+- [x] Utiliza Librerías de graficas (`chart.js` ó `google chart`).
+- [x] Cobertura de coverage al 100%.
