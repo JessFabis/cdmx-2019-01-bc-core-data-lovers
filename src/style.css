@@ -240,3 +240,18 @@ section {
 header {
   background: white;
 }
+#info{
+  width: 200px;
+  height: 80px;
+  font-size: 30px;
+  background-color: blue;
+  text-align: center;
+  font-family: "Indie Flower", "cursive";
+  padding: 10px;
+  font-weight: 600;
+  color: yellow;
+  border-radius: 6px;
+  border: 4px solid yellow;
+
+
+}

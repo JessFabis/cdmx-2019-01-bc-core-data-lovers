@@ -2,33 +2,37 @@
 let dataPokes = "";
 let google = window.google;
 
-fetch ('./data/pokemon/pokemon.json')
-.then (tryPoke => tryPoke.json())
-.then (pokes =>{ 
-  dataPokes = pokes.pokemon ;
-  
-  
-})
-google.load('visualization','1.0',{'packages':['corechart']});
-const draw = ()=>{
-const data = new google.visualization.DataTable();
-data.addColumn('string','Edad');
-data.addColumn('number','Porcentaje %');
-data.addRows(
-  [
-    ['13 a 17 años',22],
-    ['18 a 29 años',46],
-    ['30 a 50 años',25],
-    ['Más de 50 años ',6]
-  ]
-);
+fetch('./data/pokemon/pokemon.json')
+  .then(tryPoke => tryPoke.json())
+  .then(pokes => {
+    dataPokes = pokes.pokemon;
 
-const option ={'title':'¿Quien Juega mas ?',
 
-'width':900,
-'height':400};
-const grafica  = new google.visualization.PieChart(document.getElementById('charts'));
-grafica.draw(data,option);
+  })
+google.load('visualization', '1.0', {
+  'packages': ['corechart']
+});
+const draw = () => {
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'Edad');
+  data.addColumn('number', 'Porcentaje %');
+  data.addRows(
+    [
+      ['13 a 17 años', 22],
+      ['18 a 29 años', 46],
+      ['30 a 50 años', 25],
+      ['Más de 50 años ', 6]
+    ]
+  );
+
+  const option = {
+    'title': '¿Quién Juega mas ?',
+
+    'width': 900,
+    'height': 400
+  };
+  const grafica = new google.visualization.PieChart(document.getElementById('charts'));
+  grafica.draw(data, option);
 }
 google.setOnLoadCallback(draw);
 
@@ -114,10 +118,10 @@ info.addEventListener("click", () => {
 
 
     arreglo.push(element.avg_spawns);
-     statsPok = window.data.computeStats(arreglo);
-   
-   
+    statsPok = window.data.computeStats(arreglo);
 
-  }); alert("Sabías que... en promedio este tipo de pokemons tienden a aparecer cada : " + statsPok);
+
+
+  });
+  alert("Sabías que... en promedio este tipo de pokemons tienden a aparecer cada : " + statsPok);
 })
-

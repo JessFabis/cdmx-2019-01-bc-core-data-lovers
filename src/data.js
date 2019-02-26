@@ -9,15 +9,15 @@ window.data = {
     return arrayFilter;
 
   },
-  sortData: (result,  sortOrder) => {
+  sortData: (result, sortOrder) => {
 
     switch (sortOrder) {
       case 'desc':
-      return result.sort((a, b) => (a.name > b.name)  && -1);
+        return result.sort((a, b) => (a.name > b.name) && -1);
       case 'asc':
-      return result.sort((a, b) => (a.name < b.name) && -1);
+        return result.sort((a, b) => (a.name < b.name) && -1);
 
-    
+
     }
 
   },
@@ -27,11 +27,8 @@ window.data = {
     });
     const calculation = (result / arreglo.length).toFixed(2);
     return calculation;
-    
-    
+
+
   }
- 
+
 };
-
-
-
